@@ -14,7 +14,9 @@ time_format = '%Y-%m-%d'
 df['crawled_date'] = [datetime.strptime(i, time_format) for i in df['crawled_date']]
 
  #create plot
-fig, ax = plt.subplots()
+
+fig, ax = plt.subplots(figsize=(8,3))
+ax.set_position([0.1,0.1,0.5,0.8])
 ax.plot_date(df['crawled_date'],df['max_prices'], fmt="r-", c="lightslategrey", label='Maximum Ticketpreise')
 ax.plot_date(df['crawled_date'],df['min_prices'], fmt="r-", c="darkkhaki", label='Minimum Ticketpreise')
 ax.plot_date(df['crawled_date'],df['ATP'], fmt="r-",c="black", label='Angebotene Ticketpreise') 
